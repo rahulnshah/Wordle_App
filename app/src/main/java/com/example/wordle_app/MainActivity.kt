@@ -2,11 +2,13 @@ package com.example.wordle_app
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -16,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Toast.makeText(this,wordToGuess, Toast.LENGTH_SHORT).show()
         setContentView(R.layout.activity_main)
         val button = findViewById<Button>(R.id.button)
         val targetWordTextView = findViewById<TextView>(R.id.textView)
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         val editText = findViewById<EditText>(R.id.editText)
 
         val context: InputMethodManager  = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        //Log.v("wordToGuess", wordToGuess)
         // Set the target word
         targetWordTextView.text = wordToGuess.lowercase()
 
